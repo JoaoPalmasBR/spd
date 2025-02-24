@@ -61,8 +61,11 @@ O cliente se conectará ao servidor e poderá enviar mensagens criptografadas.
 ## 📞 Integrantes
 
 @Emmanuel de Oliveira Peralta
+
 @Felipe Nobrega
+
 @João Antonio dos Santos Ilario
+
 @Nathan Aguiar Silva
 
 Caso tenha dúvidas ou sugestões, entre em contato!
