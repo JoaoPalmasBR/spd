@@ -32,16 +32,16 @@ porta = 12345  # define a porta
 client_socket.connect((localhost, porta))  # conecta ao servidor
 
 print("Conectado ao servidor em %s:%d" % (localhost, porta))
-client_socket.send("".encode())
-chave = client_socket.recv(1024).decode()
+#client_socket.send("".encode())
+#chave = client_socket.recv(1024).decode()
 
 #envia a mensagem para o servidor
 mensagem = "Olá, servidor!"
-mensagemEncrypt = encrypt(chave, mensagem)
-client_socket.send(mensagemEncrypt.encode())  # encode converte string para bytes e envia para o servidor
+#mensagemEncrypt = encrypt(chave, mensagem)
+#client_socket.send(mensagemEncrypt.encode())  # encode converte string para bytes e envia para o servidor
 
 #recebe a mensagem do servidor
-dados = client_socket.recv(1024).decode()  # decode converte bytes para string
-print("Mensagem recebida: %s" % dados)
+#dados = client_socket.recv(1024).decode()  # decode converte bytes para string
+#print("Mensagem recebida: %s" % dados)
 
-client_socket.close()
+#client_socket.close()
