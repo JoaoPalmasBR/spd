@@ -26,22 +26,22 @@ def decrypt(private_key, encrypted_message):
     return decrypted.decode()
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)   # cria o objeto socket protocolo afinet ipv4; SOCKSTREAM define TCP
-localhost = '172.30.128.1' # define ip do servidor
+localhost = '0.0.0.0' # define ip do servidor
 porta = 12345  # define a porta
 
 client_socket.connect((localhost, porta))  # conecta ao servidor
 
 print("Conectado ao servidor em %s:%d" % (localhost, porta))
-#client_socket.send("".encode())
-#chave = client_socket.recv(1024).decode()
+client_socket.send("".encode())
+chave = client_socket.recv(1024).decode()
 
 #envia a mensagem para o servidor
 mensagem = "Olá, servidor!"
-#mensagemEncrypt = encrypt(chave, mensagem)
-#client_socket.send(mensagemEncrypt.encode())  # encode converte string para bytes e envia para o servidor
+mensagemEncrypt = encrypt(chave, mensagem)
+client_socket.send(mensagemEncrypt.encode())  # encode converte string para bytes e envia para o servidor
 
 #recebe a mensagem do servidor
-#dados = client_socket.recv(1024).decode()  # decode converte bytes para string
-#print("Mensagem recebida: %s" % dados)
+dados = client_socket.recv(1024).decode()  # decode converte bytes para string
+print("Mensagem recebida: %s" % dados)
 
-#client_socket.close()
+client_socket.close()

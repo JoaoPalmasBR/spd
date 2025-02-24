@@ -26,7 +26,7 @@ def decrypt(private_key, encrypted_message):
     return decrypted.decode()
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)   # cria o objeto socket protocolo afinet ipv4; SOCKSTREAM define TCP
-localhost = "172.30.128.1" # define ip do servidor
+localhost = "0.0.0.0" # define ip do servidor
 porta = 12345  # define a portas
 
 # vincula o socket a um endereço e porta
